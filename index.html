@@ -3,46 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global AQI Monitor</title>
-
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- Main CSS -->
+    <title>Air Quality Index</title>
     <link rel="stylesheet" href="style.css">
-
-    <!-- PWA Manifest -->
     <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
 <body>
     <header>
-        <h1>Global AQI Monitor</h1>
-        <button id="theme-toggle"><i class="fa-solid fa-moon"></i></button>
+        <h1>Air Quality Index (AQI) Dashboard</h1>
+        <button id="theme-toggle">Toggle Dark Mode</button>
     </header>
 
     <main>
         <div id="map"></div>
-        <aside id="city-info">
-            <h2>Select a city</h2>
-            <div id="info-content">
-                <p>Click on a city marker to see AQI details.</p>
-            </div>
-        </aside>
+        <div id="info">
+            <h2>City Information</h2>
+            <div id="info-content">Click on a city marker to view AQI details.</div>
+        </div>
     </main>
 
     <footer>
-        <p>Developed by Code Vibing | AQI updated via AQICN API | AI analysis powered by OpenRouter</p>
+        <p>Data from AQICN API. AI summaries generated using OpenRouter free models (gpt-3.5-mini).</p>
+        <p>Developed by Code Vibing & ChatGPT.</p>
     </footer>
 
-    <!-- Leaflet JS -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <!-- Main JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
