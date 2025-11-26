@@ -1,57 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>AQI World Index</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global AQI Monitor</title>
 
-    <!-- MAIN CSS -->
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Main CSS -->
     <link rel="stylesheet" href="style.css">
-
-    <!-- THEME SWITCHER -->
-    <script defer src="theme.js"></script>
-
-    <!-- LEAFLET -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
-    <!-- CHART JS -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!-- PWA -->
     <link rel="manifest" href="manifest.json">
 </head>
-
 <body>
     <header>
-        <img src="assets/logo.png" id="logo">
-        <h1>AQI Live Index Map</h1>
-        <button id="theme-toggle">🌙 Dark Mode</button>
+        <h1>Global AQI Monitor</h1>
+        <button id="theme-toggle"><i class="fa-solid fa-moon"></i></button>
     </header>
 
     <main>
         <div id="map"></div>
-
-        <aside id="panel">
-            <h2 id="city-name">Select a City</h2>
-            <div id="aqi-info">
-                <div id="aqi-value"></div>
-                <div id="aqi-rating"></div>
+        <aside id="city-info">
+            <h2>Select a city</h2>
+            <div id="info-content">
+                <p>Click on a city marker to see AQI details.</p>
             </div>
-
-            <div id="pollutants-grid"></div>
-
-            <canvas id="aqi-chart" height="180"></canvas>
-
-            <section id="ai-summary"></section>
-
-            <footer>
-                <small>Updated every hour • AI summaries refreshed every 6 hours<br>
-                Developed by Code Vibing ChatGPT.</small>
-            </footer>
         </aside>
     </main>
 
+    <footer>
+        <p>Developed by Code Vibing | AQI updated via AQICN API | AI analysis powered by OpenRouter</p>
+    </footer>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Main JS -->
     <script src="app.js"></script>
 </body>
 </html>
