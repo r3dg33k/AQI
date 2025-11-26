@@ -1,12 +1,12 @@
-// Initialize Map
+// Initialize Leaflet Map
 const map = L.map('map').setView([20, 0], 2);
 
-// OpenStreetMap Tiles
+// OpenStreetMap tiles
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors'
 }).addTo(map);
 
-// Cities (top AQI index examples)
+// Cities array
 const cities = [
     { name: "Delhi", lat: 28.7041, lon: 77.1025 },
     { name: "Riyadh", lat: 24.7136, lon: 46.6753 },
@@ -16,8 +16,8 @@ const cities = [
     { name: "Dhaka", lat: 23.8103, lon: 90.4125 }
 ];
 
-// Load AQI Data
-fetch('data/aqi.json')
+// Fetch AQI JSON (relative path)
+fetch("data/aqi.json")
     .then(res => res.json())
     .then(data => {
         cities.forEach(city => {
@@ -34,7 +34,7 @@ fetch('data/aqi.json')
         });
     });
 
-// AQI Rating
+// AQI Rating helper
 function getAQIRating(aqi){
     if(aqi === 'N/A') return 'Unknown';
     aqi = Number(aqi);
@@ -46,7 +46,7 @@ function getAQIRating(aqi){
     return 'Hazardous';
 }
 
-// Show info in sidebar
+// Sidebar info
 function showCityInfo(name, aqi, rating, data){
     const infoDiv = document.getElementById('info-content');
     infoDiv.innerHTML = `
@@ -60,7 +60,7 @@ function showCityInfo(name, aqi, rating, data){
     `;
 }
 
-// Theme Toggle
+// Theme toggle
 document.getElementById('theme-toggle').addEventListener('click', () => {
     document.body.classList.toggle('dark-theme');
 });
