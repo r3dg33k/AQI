@@ -1,12 +1,16 @@
+// ---------------------------
 // Initialize Leaflet Map
+// ---------------------------
 const map = L.map('map').setView([20, 0], 2);
 
-// OpenStreetMap tiles
+// OpenStreetMap tiles (free)
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors'
 }).addTo(map);
 
-// Cities array
+// ---------------------------
+// Cities Data
+// ---------------------------
 const cities = [
     { name: "Delhi", lat: 28.7041, lon: 77.1025 },
     { name: "Riyadh", lat: 24.7136, lon: 46.6753 },
@@ -16,7 +20,9 @@ const cities = [
     { name: "Dhaka", lat: 23.8103, lon: 90.4125 }
 ];
 
-// Fetch AQI JSON (relative path)
+// ---------------------------
+// Fetch AQI JSON
+// ---------------------------
 fetch("data/aqi.json")
     .then(res => res.json())
     .then(data => {
@@ -25,16 +31,20 @@ fetch("data/aqi.json")
             const aqi = cityData?.data?.aqi || 'N/A';
             const rating = getAQIRating(aqi);
 
+            // Add marker
             const marker = L.marker([city.lat, city.lon]).addTo(map);
             marker.bindPopup(`<b>${city.name}</b><br>AQI: ${aqi} (${rating})`);
 
+            // On marker click, show sidebar info
             marker.on('click', () => {
                 showCityInfo(city.name, aqi, rating, cityData);
             });
         });
     });
 
-// AQI Rating helper
+// ---------------------------
+// Helper: AQI Rating
+// ---------------------------
 function getAQIRating(aqi){
     if(aqi === 'N/A') return 'Unknown';
     aqi = Number(aqi);
@@ -46,21 +56,46 @@ function getAQIRating(aqi){
     return 'Hazardous';
 }
 
-// Sidebar info
+// ---------------------------
+// Show City Info in Sidebar
+// ---------------------------
 function showCityInfo(name, aqi, rating, data){
     const infoDiv = document.getElementById('info-content');
-    infoDiv.innerHTML = `
-        <div class="city-card">
-            <h3>${name}</h3>
-            <p><strong>AQI:</strong> ${aqi}</p>
-            <p><strong>Rating:</strong> ${rating}</p>
-            <p><strong>Pollutants:</strong> ${JSON.stringify(data?.data?.iaqi || {})}</p>
-            <p><strong>AI Summary:</strong> This city shows moderate pollution levels. Residents should monitor air quality before outdoor activities.</p>
-        </div>
-    `;
+    infoDiv.innerHTML = `<p>Loading AI summary...</p>`;
+
+    // Fetch AI summary JSON (generated via GitHub Actions)
+    fetch(`data/analysis/${name.toLowerCase()}.json`)
+        .then(res => res.json())
+        .then(aiData => {
+            const aiSummary = aiData.choices?.[0]?.message?.content || "No AI summary available.";
+
+            infoDiv.innerHTML = `
+                <div class="city-card">
+                    <h3>${name}</h3>
+                    <p><strong>AQI:</strong> ${aqi}</p>
+                    <p><strong>Rating:</strong> ${rating}</p>
+                    <p><strong>Pollutants:</strong> ${JSON.stringify(data?.data?.iaqi || {})}</p>
+                    <p><strong>AI Summary:</strong> ${aiSummary}</p>
+                </div>
+            `;
+        })
+        .catch(err => {
+            infoDiv.innerHTML = `
+                <div class="city-card">
+                    <h3>${name}</h3>
+                    <p><strong>AQI:</strong> ${aqi}</p>
+                    <p><strong>Rating:</strong> ${rating}</p>
+                    <p><strong>Pollutants:</strong> ${JSON.stringify(data?.data?.iaqi || {})}</p>
+                    <p><strong>AI Summary:</strong> Failed to load AI summary.</p>
+                </div>
+            `;
+            console.error(err);
+        });
 }
 
-// Theme toggle
+// ---------------------------
+// Theme Toggle
+// ---------------------------
 document.getElementById('theme-toggle').addEventListener('click', () => {
     document.body.classList.toggle('dark-theme');
 });
