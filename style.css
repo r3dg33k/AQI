@@ -1,0 +1,37 @@
+body {
+  margin: 0;
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+#map {
+  width: 70%;
+  height: 100%;
+}
+
+#side-panel {
+  width: 30%;
+  padding: 20px;
+  background: #fafafa;
+  overflow-y: auto;
+  border-left: 1px solid #ddd;
+}
+
+#aqi-box h3 {
+  margin-top: 10px;
+}
+
+#ai-summary {
+  margin-top: 20px;
+  padding: 12px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+footer {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #777;
+}
