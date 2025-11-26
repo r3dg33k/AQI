@@ -1,0 +1,7 @@
+{
+  "error": {
+    "message": "qwen/free is not a valid model ID",
+    "code": 400
+  },
+  "user_id": "user_30JaW4Co9JPrBSWPqwyBgKQQCs0"
+}
