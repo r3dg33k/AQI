@@ -1,0 +1,15 @@
+{
+  "name": "AQI Index Map",
+  "short_name": "AQI Map",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#0077ff",
+  "icons": [
+    {
+      "src": "assets/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
