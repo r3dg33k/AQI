@@ -1,14 +1,14 @@
 {
-  "name": "AQI Index Map",
-  "short_name": "AQI Map",
-  "start_url": "index.html",
+  "name": "Global AQI Monitor",
+  "short_name": "AQI Monitor",
+  "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#121212",
-  "theme_color": "#0077ff",
+  "background_color": "#f0f4f8",
+  "theme_color": "#00796b",
   "icons": [
     {
-      "src": "assets/logo.png",
-      "sizes": "512x512",
+      "src": "https://cdn-icons-png.flaticon.com/512/252/252025.png",
+      "sizes": "192x192",
       "type": "image/png"
     }
   ]
