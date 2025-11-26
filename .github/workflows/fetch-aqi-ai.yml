@@ -1,0 +1,54 @@
+name: Fetch AQI and AI Summaries
+
+on:
+  schedule:
+    - cron: "0 * * * *"  # hourly
+  workflow_dispatch:
+
+jobs:
+  fetch-aqi-ai:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Install jq
+        run: sudo apt-get install jq -y
+
+      - name: Fetch AQI data
+        env:
+          AQI_KEY: ${{ secrets.AQI_API_KEY }}
+        run: |
+          mkdir -p data
+          cities=("delhi" "riyadh" "beijing" "tokyo" "newyork" "dhaka")
+          result="{\"cities\":{}}"
+          for city in "${cities[@]}"; do
+            res=$(curl -s "https://api.waqi.info/feed/$city/?token=$AQI_KEY")
+            result=$(echo "$result" | jq --arg city "$city" --argjson res "$res" '.cities[$city]=$res')
+          done
+          echo "$result" | jq '.' > data/aqi.json
+
+      - name: Generate AI summaries (free model)
+        env:
+          OPENROUTER_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: |
+          mkdir -p data/analysis
+          for city in "${cities[@]}"; do
+            aqi=$(jq -r ".cities[\"$city\"].data.aqi" data/aqi.json)
+            summary=$(curl -s -X POST "https://api.openrouter.ai/v1/chat/completions" \
+              -H "Authorization: Bearer $OPENROUTER_KEY" \
+              -H "Content-Type: application/json" \
+              -d "{
+                    \"model\": \"openai/gpt-3.5-mini\",
+                    \"messages\": [
+                      {\"role\": \"system\", \"content\": \"You are an expert on air quality and AQI.\"},
+                      {\"role\": \"user\", \"content\": \"Analyze AQI for $city with AQI $aqi. Provide summary, advice for residents, and travelers.\"}
+                    ]
+                  }")
+            echo "$summary" > "data/analysis/$city.json"
+          done
+
+      - name: Commit & push updates
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Update AQI and AI summaries"
