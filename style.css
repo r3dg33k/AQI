@@ -1,37 +1,106 @@
+:root {
+  --bg: #ffffff;
+  --text: #333;
+  --panel-bg: #fafafa;
+  --card-bg: #ffffff;
+  --accent: #0077ff;
+}
+
+[data-theme="dark"] {
+  --bg: #121212;
+  --text: #eeeeee;
+  --panel-bg: #1e1e1e;
+  --card-bg: #1f1f1f;
+  --accent: #4aa3ff;
+}
+
 body {
   margin: 0;
+  background: var(--bg);
+  color: var(--text);
   display: flex;
-  height: 100vh;
-  font-family: Arial, sans-serif;
+  flex-direction: column;
+  font-family: 'Inter', sans-serif;
+}
+
+/* HEADER */
+header {
+  padding: 10px 20px;
+  background: var(--panel-bg);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-bottom: 1px solid #ccc;
+}
+
+#logo {
+  width: 40px;
+}
+
+/* MAIN LAYOUT */
+main {
+  display: flex;
+  height: calc(100vh - 60px);
 }
 
 #map {
-  width: 70%;
+  width: 65%;
   height: 100%;
 }
 
-#side-panel {
-  width: 30%;
+#panel {
+  width: 35%;
   padding: 20px;
-  background: #fafafa;
+  background: var(--panel-bg);
   overflow-y: auto;
   border-left: 1px solid #ddd;
 }
 
-#aqi-box h3 {
-  margin-top: 10px;
+/* AQI CARD */
+#aqi-info {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
 }
 
+#aqi-value {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+#aqi-rating {
+  padding: 8px 14px;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+}
+
+/* POLLUTANTS GRID */
+#pollutants-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.pollutant-card {
+  background: var(--card-bg);
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 4px rgba(0,0,0,0.1);
+}
+
+.pollutant-icon {
+  width: 30px;
+  opacity: 0.8;
+}
+
+/* AI SUMMARY */
 #ai-summary {
   margin-top: 20px;
-  padding: 12px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
-}
-
-footer {
-  margin-top: 20px;
-  font-size: 12px;
-  color: #777;
+  padding: 15px;
+  background: var(--card-bg);
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,.15);
+  line-height: 1.6;
 }
