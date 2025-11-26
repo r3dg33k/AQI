@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AQI Index</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+
+<body>
+    <div id="map"></div>
+
+    <div id="side-panel">
+        <h2 id="city-name">Select a city</h2>
+        <div id="aqi-box"></div>
+        <pre id="pollutants"></pre>
+        <div id="ai-summary"></div>
+        <footer>
+            <small id="footer-info">Developed by Code Vibing ChatGPT.</small>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
