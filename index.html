@@ -1,28 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>AQI Index</title>
+    <meta charset="UTF-8" />
+    <title>AQI World Index</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- MAIN CSS -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- Leaflet -->
+    <!-- THEME SWITCHER -->
+    <script defer src="theme.js"></script>
+
+    <!-- LEAFLET -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <!-- CHART JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
 </head>
 
 <body>
-    <div id="map"></div>
+    <header>
+        <img src="assets/logo.png" id="logo">
+        <h1>AQI Live Index Map</h1>
+        <button id="theme-toggle">🌙 Dark Mode</button>
+    </header>
 
-    <div id="side-panel">
-        <h2 id="city-name">Select a city</h2>
-        <div id="aqi-box"></div>
-        <pre id="pollutants"></pre>
-        <div id="ai-summary"></div>
-        <footer>
-            <small id="footer-info">Developed by Code Vibing ChatGPT.</small>
-        </footer>
-    </div>
+    <main>
+        <div id="map"></div>
+
+        <aside id="panel">
+            <h2 id="city-name">Select a City</h2>
+            <div id="aqi-info">
+                <div id="aqi-value"></div>
+                <div id="aqi-rating"></div>
+            </div>
+
+            <div id="pollutants-grid"></div>
+
+            <canvas id="aqi-chart" height="180"></canvas>
+
+            <section id="ai-summary"></section>
+
+            <footer>
+                <small>Updated every hour • AI summaries refreshed every 6 hours<br>
+                Developed by Code Vibing ChatGPT.</small>
+            </footer>
+        </aside>
+    </main>
 
     <script src="app.js"></script>
 </body>
