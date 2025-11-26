@@ -1,15 +1,15 @@
 {
-  "name": "Global AQI Monitor",
-  "short_name": "AQI Monitor",
+  "name": "Air Quality Index Dashboard",
+  "short_name": "AQI",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#f0f4f8",
-  "theme_color": "#00796b",
+  "background_color": "#0077cc",
+  "theme_color": "#0077cc",
   "icons": [
     {
-      "src": "https://cdn-icons-png.flaticon.com/512/252/252025.png",
-      "sizes": "192x192",
-      "type": "image/png"
+      "src": "favicon.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
     }
   ]
 }
