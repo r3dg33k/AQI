@@ -1,1 +1,37 @@
+name: Fetch AQI Data
+
+on:
+  schedule:
+    - cron: "0 * * * *" # hourly
+  workflow_dispatch:
+
+jobs:
+  fetch-aqi:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Install jq
+        run: sudo apt-get install jq -y
+
+      - name: Fetch AQI for cities
+        env:
+          AQI_KEY: ${{ secrets.AQI_API_KEY }}
+        run: |
+          mkdir -p data
+          cities=("delhi" "riyadh" "beijing" "tokyo" "newyork" "dhaka")
+          result="{\"cities\":{}}"
+
+          for city in "${cities[@]}"; do
+            res=$(curl -s "https://api.waqi.info/feed/$city/?token=$AQI_KEY")
+            result=$(echo "$result" | jq --arg city "$city" --argjson res "$res" '.cities[$city]=$res')
+          done
+
+          echo "$result" | jq '.' > data/aqi.json
+
+      - name: Commit & push
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Update AQI data"
 
