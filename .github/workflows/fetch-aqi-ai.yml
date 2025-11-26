@@ -1,4 +1,4 @@
-name: Fetch AQI and AI Summaries
+name: Fetch AQI + AI Summaries
 
 on:
   schedule:
@@ -9,7 +9,7 @@ jobs:
   fetch-aqi-ai:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
+      - name: Checkout
         uses: actions/checkout@v3
 
       - name: Install jq
@@ -41,14 +41,14 @@ jobs:
               -d "{
                     \"model\": \"openai/gpt-3.5-mini\",
                     \"messages\": [
-                      {\"role\": \"system\", \"content\": \"You are an expert on air quality and AQI.\"},
-                      {\"role\": \"user\", \"content\": \"Analyze AQI for $city with AQI $aqi. Provide summary, advice for residents, and travelers.\"}
+                      {\"role\": \"system\", \"content\": \"You are an AQI expert.\"},
+                      {\"role\": \"user\", \"content\": \"Analyze AQI of $city ($aqi). Give summary, advice for residents/travelers.\"}
                     ]
                   }")
             echo "$summary" > "data/analysis/$city.json"
           done
 
-      - name: Commit & push updates
+      - name: Commit & Push
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "Update AQI and AI summaries"
+          commit_message: "Update AQI + AI summaries"
