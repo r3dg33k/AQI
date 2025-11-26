@@ -1,0 +1,47 @@
+name: Generate AI AQI Analysis
+
+on:
+  schedule:
+    - cron: "0 */6 * * *" # every 6 hours
+  workflow_dispatch:
+
+jobs:
+  ai-analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Install jq
+        run: sudo apt-get install jq -y
+
+      - name: Load AQI data
+        run: cat data/aqi.json
+
+      - name: Generate AI summaries
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: |
+          mkdir -p data/analysis
+          cities=("delhi" "riyadh" "beijing" "tokyo" "newyork" "dhaka")
+
+          for city in "${cities[@]}"; do
+            aqi=$(jq -r ".cities.$city.data.aqi" data/aqi.json)
+
+            prompt="Provide a detailed AQI analysis for $city. AQI is $aqi. Include: summary, pollutants impact, what govt is doing, travel advice, resident suggestions, long-term outlook, accuracy score 0-100."
+
+            response=$(curl https://openrouter.ai/api/v1/chat/completions \
+              -H "Authorization: Bearer $OPENROUTER_API_KEY" \
+              -H "Content-Type: application/json" \
+              -d "{
+                \"model\": \"qwen/free\",
+                \"messages\": [{\"role\": \"user\", \"content\": \"$prompt\"}]
+              }")
+
+            echo "$response" | jq '.' > "data/analysis/$city.json"
+          done
+
+      - name: Commit AI files
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Update AI analyses"
