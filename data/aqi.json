@@ -3,13 +3,13 @@
     "delhi": {
       "status": "ok",
       "data": {
-        "aqi": 167,
-        "idx": 10111,
+        "aqi": 200,
+        "idx": 3715,
         "attributions": [
           {
-            "url": "http://dpccairdata.com/",
-            "name": "Delhi Pollution Control Commitee (Government of NCT of Delhi)",
-            "logo": "India-DPCCC.png"
+            "url": "http://cpcb.nic.in/",
+            "name": "CPCB - India Central Pollution Control Board",
+            "logo": "India-CPCB.png"
           },
           {
             "url": "https://waqi.info/",
@@ -18,57 +18,54 @@
         ],
         "city": {
           "geo": [
-            28.612498,
-            77.237388
+            28.628577,
+            77.241036
           ],
-          "name": "Major Dhyan Chand National Stadium, Delhi, Delhi, India",
-          "url": "https://aqicn.org/city/delhi/major-dhyan-chand-national-stadium",
+          "name": "ITO, Delhi, Delhi, India",
+          "url": "https://aqicn.org/city/delhi/ito",
           "location": ""
         },
-        "dominentpol": "pm10",
+        "dominentpol": "pm25",
         "iaqi": {
           "co": {
-            "v": 13.8
+            "v": 0.1
           },
           "dew": {
             "v": 7
           },
           "h": {
-            "v": 79.55714285714286
+            "v": 81
           },
           "no2": {
-            "v": 41.1
+            "v": 52.4
           },
           "o3": {
-            "v": 0.5
+            "v": 4.6
           },
           "p": {
-            "v": 994.0857142857143
+            "v": 1019
           },
           "pm10": {
-            "v": 167
+            "v": 138
           },
           "pm25": {
-            "v": 207
+            "v": 200
           },
           "so2": {
-            "v": 7.1
+            "v": 4.8
           },
           "t": {
-            "v": 12.4
+            "v": 10
           },
           "w": {
-            "v": 0.38571428571428573
-          },
-          "wd": {
-            "v": 206
+            "v": 1.5
           }
         },
         "time": {
-          "s": "2025-12-04 01:00:00",
+          "s": "2025-12-04 02:00:00",
           "tz": "+05:30",
-          "v": 1764810000,
-          "iso": "2025-12-04T01:00:00+05:30"
+          "v": 1764813600,
+          "iso": "2025-12-04T02:00:00+05:30"
         },
         "forecast": {
           "daily": {
@@ -225,7 +222,7 @@
           }
         },
         "debug": {
-          "sync": "2025-12-04T05:23:20+09:00"
+          "sync": "2025-12-04T06:16:55+09:00"
         }
       }
     },
@@ -489,7 +486,7 @@
     "beijing": {
       "status": "ok",
       "data": {
-        "aqi": 91,
+        "aqi": 93,
         "idx": 1451,
         "attributions": [
           {
@@ -516,10 +513,10 @@
             "v": 6.4
           },
           "h": {
-            "v": 62
+            "v": 67
           },
           "no2": {
-            "v": 27.9
+            "v": 27
           },
           "o3": {
             "v": 0.5
@@ -528,26 +525,26 @@
             "v": 1025
           },
           "pm10": {
-            "v": 53
+            "v": 54
           },
           "pm25": {
-            "v": 91
+            "v": 93
           },
           "so2": {
             "v": 2.1
           },
           "t": {
-            "v": -8
+            "v": -9
           },
           "w": {
-            "v": 1.5
+            "v": 0.5
           }
         },
         "time": {
-          "s": "2025-12-04 04:00:00",
+          "s": "2025-12-04 05:00:00",
           "tz": "+08:00",
-          "v": 1764820800,
-          "iso": "2025-12-04T04:00:00+08:00"
+          "v": 1764824400,
+          "iso": "2025-12-04T05:00:00+08:00"
         },
         "forecast": {
           "daily": {
@@ -712,14 +709,14 @@
           }
         },
         "debug": {
-          "sync": "2025-12-04T05:24:01+09:00"
+          "sync": "2025-12-04T06:17:36+09:00"
         }
       }
     },
     "tokyo": {
       "status": "ok",
       "data": {
-        "aqi": 24,
+        "aqi": 22,
         "idx": 5573,
         "attributions": [
           {
@@ -755,13 +752,13 @@
             "v": 39
           },
           "no2": {
-            "v": 6.5
+            "v": 12.1
           },
           "o3": {
-            "v": 24.1
+            "v": 22.4
           },
           "p": {
-            "v": 1004.8
+            "v": 1007
           },
           "pm10": {
             "v": 4
@@ -776,17 +773,17 @@
             "v": 1.5
           },
           "t": {
-            "v": 6.7
+            "v": 5.9
           },
           "w": {
-            "v": 3
+            "v": 2.5
           }
         },
         "time": {
-          "s": "2025-12-04 04:00:00",
+          "s": "2025-12-04 05:00:00",
           "tz": "+09:00",
-          "v": 1764820800,
-          "iso": "2025-12-04T04:00:00+09:00"
+          "v": 1764824400,
+          "iso": "2025-12-04T05:00:00+09:00"
         },
         "forecast": {
           "daily": {
@@ -939,24 +936,24 @@
           }
         },
         "debug": {
-          "sync": "2025-12-04T05:24:01+09:00"
+          "sync": "2025-12-04T06:17:35+09:00"
         }
       }
     },
     "newyork": {
       "status": "ok",
       "data": {
-        "aqi": 39,
+        "aqi": 27,
         "idx": 3309,
         "attributions": [
-          {
-            "url": "http://www.airnow.gov/",
-            "name": "Air Now - US EPA"
-          },
           {
             "url": "http://www.dec.ny.gov/",
             "name": "New York State Department of Environmental Conservation (NYSDEC)",
             "logo": "US-NYDEC.png"
+          },
+          {
+            "url": "http://www.airnow.gov/",
+            "name": "Air Now - US EPA"
           },
           {
             "url": "https://waqi.info/",
@@ -975,26 +972,26 @@
         "dominentpol": "pm25",
         "iaqi": {
           "h": {
-            "v": 46.7
+            "v": 47.5
           },
           "p": {
-            "v": 1017.9
+            "v": 1018.1
           },
           "pm25": {
-            "v": 39
+            "v": 27
           },
           "t": {
-            "v": 5.7
+            "v": 5.6
           },
           "w": {
-            "v": 5.2
+            "v": 4.4
           }
         },
         "time": {
-          "s": "2025-12-03 14:00:00",
+          "s": "2025-12-03 15:00:00",
           "tz": "-05:00",
-          "v": 1764770400,
-          "iso": "2025-12-03T14:00:00-05:00"
+          "v": 1764774000,
+          "iso": "2025-12-03T15:00:00-05:00"
         },
         "forecast": {
           "daily": {
@@ -1171,7 +1168,7 @@
           }
         },
         "debug": {
-          "sync": "2025-12-04T05:00:54+09:00"
+          "sync": "2025-12-04T05:52:20+09:00"
         }
       }
     },
