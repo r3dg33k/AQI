@@ -3,7 +3,7 @@
     "delhi": {
       "status": "ok",
       "data": {
-        "aqi": 307,
+        "aqi": 197,
         "idx": 10111,
         "attributions": [
           {
@@ -28,47 +28,47 @@
         "dominentpol": "pm25",
         "iaqi": {
           "co": {
-            "v": 7
+            "v": 9.5
           },
           "dew": {
             "v": 10
           },
           "h": {
-            "v": 91.95714285714287
+            "v": 91
           },
           "no2": {
-            "v": 21.9
+            "v": 22.8
           },
           "o3": {
-            "v": 1.5
+            "v": 2
           },
           "p": {
-            "v": 989.342857142857
+            "v": 990
           },
           "pm10": {
-            "v": 184
+            "v": 131
           },
           "pm25": {
-            "v": 307
+            "v": 197
           },
           "so2": {
-            "v": 9.9
+            "v": 10
           },
           "t": {
-            "v": 11.666666666666666
+            "v": 11.475
           },
           "w": {
-            "v": 1.157142857142857
+            "v": 1.2
           },
           "wd": {
-            "v": 165
+            "v": 134
           }
         },
         "time": {
-          "s": "2025-12-31 08:00:00",
+          "s": "2025-12-31 10:00:00",
           "tz": "+05:30",
-          "v": 1767168000,
-          "iso": "2025-12-31T08:00:00+05:30"
+          "v": 1767175200,
+          "iso": "2025-12-31T10:00:00+05:30"
         },
         "forecast": {
           "daily": {
@@ -225,7 +225,7 @@
           }
         },
         "debug": {
-          "sync": "2025-12-31T12:23:34+09:00"
+          "sync": "2025-12-31T13:34:16+09:00"
         }
       }
     },
@@ -489,7 +489,7 @@
     "beijing": {
       "status": "ok",
       "data": {
-        "aqi": 22,
+        "aqi": 23,
         "idx": 1451,
         "attributions": [
           {
@@ -513,22 +513,22 @@
         "dominentpol": "o3",
         "iaqi": {
           "co": {
-            "v": 4.6
+            "v": 3.7
           },
           "h": {
-            "v": 25
+            "v": 23
           },
           "no2": {
             "v": 2.3
           },
           "o3": {
-            "v": 22
+            "v": 22.8
           },
           "p": {
-            "v": 1038
+            "v": 1037
           },
           "pm10": {
-            "v": 7
+            "v": 9
           },
           "pm25": {
             "v": 17
@@ -537,17 +537,17 @@
             "v": 1.1
           },
           "t": {
-            "v": -4
+            "v": -3
           },
           "w": {
-            "v": 3.6
+            "v": 2.5
           }
         },
         "time": {
-          "s": "2025-12-31 11:00:00",
+          "s": "2025-12-31 12:00:00",
           "tz": "+08:00",
-          "v": 1767178800,
-          "iso": "2025-12-31T11:00:00+08:00"
+          "v": 1767182400,
+          "iso": "2025-12-31T12:00:00+08:00"
         },
         "forecast": {
           "daily": {
@@ -712,25 +712,25 @@
           }
         },
         "debug": {
-          "sync": "2025-12-31T12:26:20+09:00"
+          "sync": "2025-12-31T13:37:44+09:00"
         }
       }
     },
     "tokyo": {
       "status": "ok",
       "data": {
-        "aqi": 26,
+        "aqi": 30,
         "idx": 5573,
         "attributions": [
-          {
-            "url": "https://soramame.env.go.jp/",
-            "name": "Japan Atmospheric Environmental Regional Observation System (環境省大気汚染物質広域監視システム)",
-            "logo": "Japan-Soramame.png"
-          },
           {
             "url": "https://www.kankyo.metro.tokyo.lg.jp/",
             "name": "Tokyo, Japan Environment Agency (東京都環境局)",
             "logo": "Japan-Tokyo.png"
+          },
+          {
+            "url": "https://soramame.env.go.jp/",
+            "name": "Japan Atmospheric Environmental Regional Observation System (環境省大気汚染物質広域監視システム)",
+            "logo": "Japan-Soramame.png"
           },
           {
             "url": "https://waqi.info/",
@@ -746,28 +746,28 @@
           "url": "https://aqicn.org/city/meguro",
           "location": ""
         },
-        "dominentpol": "o3",
+        "dominentpol": "pm25",
         "iaqi": {
           "co": {
             "v": 3.4
           },
           "h": {
-            "v": 40
+            "v": 35.1
           },
           "no2": {
             "v": 12.1
           },
           "o3": {
-            "v": 25.6
+            "v": 28.1
           },
           "p": {
-            "v": 1010.4
+            "v": 1007.9
           },
           "pm10": {
-            "v": 7
+            "v": 8
           },
           "pm25": {
-            "v": 25
+            "v": 30
           },
           "r": {
             "v": 99
@@ -776,17 +776,17 @@
             "v": 1.5
           },
           "t": {
-            "v": 10
+            "v": 11.4
           },
           "w": {
-            "v": 2.2
+            "v": 1.5
           }
         },
         "time": {
-          "s": "2025-12-31 11:00:00",
+          "s": "2025-12-31 12:00:00",
           "tz": "+09:00",
-          "v": 1767178800,
-          "iso": "2025-12-31T11:00:00+09:00"
+          "v": 1767182400,
+          "iso": "2025-12-31T12:00:00+09:00"
         },
         "forecast": {
           "daily": {
@@ -939,24 +939,24 @@
           }
         },
         "debug": {
-          "sync": "2025-12-31T12:26:25+09:00"
+          "sync": "2025-12-31T13:37:43+09:00"
         }
       }
     },
     "newyork": {
       "status": "ok",
       "data": {
-        "aqi": 36,
+        "aqi": 40,
         "idx": 3309,
         "attributions": [
-          {
-            "url": "http://www.airnow.gov/",
-            "name": "Air Now - US EPA"
-          },
           {
             "url": "http://www.dec.ny.gov/",
             "name": "New York State Department of Environmental Conservation (NYSDEC)",
             "logo": "US-NYDEC.png"
+          },
+          {
+            "url": "http://www.airnow.gov/",
+            "name": "Air Now - US EPA"
           },
           {
             "url": "https://waqi.info/",
@@ -978,23 +978,23 @@
             "v": 47.1
           },
           "p": {
-            "v": 1008.2
+            "v": 1008.6
           },
           "pm25": {
-            "v": 36
+            "v": 40
           },
           "t": {
-            "v": -1.7
+            "v": -2.2
           },
           "w": {
-            "v": 5.2
+            "v": 5.8
           }
         },
         "time": {
-          "s": "2025-12-30 21:00:00",
+          "s": "2025-12-30 22:00:00",
           "tz": "-05:00",
-          "v": 1767128400,
-          "iso": "2025-12-30T21:00:00-05:00"
+          "v": 1767132000,
+          "iso": "2025-12-30T22:00:00-05:00"
         },
         "forecast": {
           "daily": {
@@ -1171,7 +1171,7 @@
           }
         },
         "debug": {
-          "sync": "2025-12-31T11:59:05+09:00"
+          "sync": "2025-12-31T12:49:28+09:00"
         }
       }
     },
