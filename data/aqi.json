@@ -3,7 +3,7 @@
     "delhi": {
       "status": "ok",
       "data": {
-        "aqi": 179,
+        "aqi": 183,
         "idx": 10111,
         "attributions": [
           {
@@ -28,47 +28,47 @@
         "dominentpol": "pm25",
         "iaqi": {
           "co": {
-            "v": 7.9
+            "v": 15
           },
           "dew": {
-            "v": 13
+            "v": 11.5
           },
           "h": {
-            "v": 74.5
+            "v": 50.2
           },
           "no2": {
-            "v": 39.8
+            "v": 51.4
           },
           "o3": {
             "v": 1.2
           },
           "p": {
-            "v": 985.4
+            "v": 985.5
           },
           "pm10": {
-            "v": 160
+            "v": 157
           },
           "pm25": {
-            "v": 179
+            "v": 183
           },
           "so2": {
-            "v": 7.3
+            "v": 8.6
           },
           "t": {
-            "v": 14.2
+            "v": 19.5
           },
           "w": {
-            "v": 0.5
+            "v": 0.6
           },
           "wd": {
-            "v": 211.3
+            "v": 231.4
           }
         },
         "time": {
-          "s": "2026-02-28 07:00:00",
+          "s": "2026-02-28 09:00:00",
           "tz": "+05:30",
-          "v": 1772262000,
-          "iso": "2026-02-28T07:00:00+05:30"
+          "v": 1772269200,
+          "iso": "2026-02-28T09:00:00+05:30"
         },
         "forecast": {
           "daily": {
@@ -225,7 +225,7 @@
           }
         },
         "debug": {
-          "sync": "2026-02-28T10:50:19+09:00"
+          "sync": "2026-02-28T12:48:11+09:00"
         }
       }
     },
@@ -489,7 +489,7 @@
     "beijing": {
       "status": "ok",
       "data": {
-        "aqi": 122,
+        "aqi": 109,
         "idx": 1451,
         "attributions": [
           {
@@ -522,16 +522,16 @@
             "v": 5.1
           },
           "o3": {
-            "v": 22.8
+            "v": 22
           },
           "p": {
             "v": 1026
           },
           "pm10": {
-            "v": 54
+            "v": 51
           },
           "pm25": {
-            "v": 122
+            "v": 109
           },
           "so2": {
             "v": 2.6
@@ -540,14 +540,14 @@
             "v": 1
           },
           "w": {
-            "v": 2.5
+            "v": 1.5
           }
         },
         "time": {
-          "s": "2026-02-28 09:00:00",
+          "s": "2026-02-28 11:00:00",
           "tz": "+08:00",
-          "v": 1772269200,
-          "iso": "2026-02-28T09:00:00+08:00"
+          "v": 1772276400,
+          "iso": "2026-02-28T11:00:00+08:00"
         },
         "forecast": {
           "daily": {
@@ -712,25 +712,25 @@
           }
         },
         "debug": {
-          "sync": "2026-02-28T10:51:17+09:00"
+          "sync": "2026-02-28T12:54:07+09:00"
         }
       }
     },
     "tokyo": {
       "status": "ok",
       "data": {
-        "aqi": 19,
+        "aqi": 26,
         "idx": 5573,
         "attributions": [
-          {
-            "url": "https://www.kankyo.metro.tokyo.lg.jp/",
-            "name": "Tokyo, Japan Environment Agency (東京都環境局)",
-            "logo": "Japan-Tokyo.png"
-          },
           {
             "url": "https://soramame.env.go.jp/",
             "name": "Japan Atmospheric Environmental Regional Observation System (環境省大気汚染物質広域監視システム)",
             "logo": "Japan-Soramame.png"
+          },
+          {
+            "url": "https://www.kankyo.metro.tokyo.lg.jp/",
+            "name": "Tokyo, Japan Environment Agency (東京都環境局)",
+            "logo": "Japan-Tokyo.png"
           },
           {
             "url": "https://waqi.info/",
@@ -746,44 +746,44 @@
           "url": "https://aqicn.org/city/meguro",
           "location": ""
         },
-        "dominentpol": "pm10",
+        "dominentpol": "o3",
         "iaqi": {
           "co": {
-            "v": 7.8
+            "v": 4.5
           },
           "h": {
-            "v": 71.2
+            "v": 52.2
           },
           "no2": {
-            "v": 30.6
+            "v": 18.6
           },
           "o3": {
-            "v": 11.2
+            "v": 25.6
           },
           "p": {
-            "v": 1010.1
+            "v": 1009.6
           },
           "pm10": {
-            "v": 19
+            "v": 9
           },
           "pm25": {
-            "v": 1
+            "v": 25
           },
           "so2": {
             "v": 1.5
           },
           "t": {
-            "v": 14.8
+            "v": 18.6
           },
           "w": {
-            "v": 1.8
+            "v": 2.3
           }
         },
         "time": {
-          "s": "2026-02-28 09:00:00",
+          "s": "2026-02-28 11:00:00",
           "tz": "+09:00",
-          "v": 1772269200,
-          "iso": "2026-02-28T09:00:00+09:00"
+          "v": 1772276400,
+          "iso": "2026-02-28T11:00:00+09:00"
         },
         "forecast": {
           "daily": {
@@ -936,24 +936,24 @@
           }
         },
         "debug": {
-          "sync": "2026-02-28T10:51:22+09:00"
+          "sync": "2026-02-28T12:54:06+09:00"
         }
       }
     },
     "newyork": {
       "status": "ok",
       "data": {
-        "aqi": 42,
+        "aqi": 53,
         "idx": 3309,
         "attributions": [
+          {
+            "url": "http://www.airnow.gov/",
+            "name": "Air Now - US EPA"
+          },
           {
             "url": "http://www.dec.ny.gov/",
             "name": "New York State Department of Environmental Conservation (NYSDEC)",
             "logo": "US-NYDEC.png"
-          },
-          {
-            "url": "http://www.airnow.gov/",
-            "name": "Air Now - US EPA"
           },
           {
             "url": "https://waqi.info/",
@@ -972,26 +972,26 @@
         "dominentpol": "pm25",
         "iaqi": {
           "h": {
-            "v": 84.6
+            "v": 83
           },
           "p": {
-            "v": 1022.2
+            "v": 1020.9
           },
           "pm25": {
-            "v": 42
+            "v": 53
           },
           "t": {
-            "v": 3.3
+            "v": 2.2
           },
           "w": {
-            "v": 4.1
+            "v": 1
           }
         },
         "time": {
-          "s": "2026-02-27 19:00:00",
+          "s": "2026-02-27 21:00:00",
           "tz": "-05:00",
-          "v": 1772218800,
-          "iso": "2026-02-27T19:00:00-05:00"
+          "v": 1772226000,
+          "iso": "2026-02-27T21:00:00-05:00"
         },
         "forecast": {
           "daily": {
@@ -1168,7 +1168,7 @@
           }
         },
         "debug": {
-          "sync": "2026-02-28T09:31:34+09:00"
+          "sync": "2026-02-28T12:04:43+09:00"
         }
       }
     },
